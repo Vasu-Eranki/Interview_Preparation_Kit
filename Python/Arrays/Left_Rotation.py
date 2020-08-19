@@ -5,13 +5,10 @@ import os
 import random
 import re
 import sys
-import collections 
-from collections import deque
+
 # Complete the rotLeft function below.
 def rotLeft(a, d):
-    a=deque(a)
-    a.rotate(-d)
-    return list(a)    
+    return (a[d:]+a[:d])
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
