@@ -13,7 +13,6 @@ class Solution:
             orig_result = divid_log - divisor_log 
             result = math.floor(10**orig_result)
             if((math.ceil(10**orig_result)-(10**orig_result))<1e-5):
-                print(math.ceil(10**orig_result),(10**orig_result))
                 result = math.ceil(10**orig_result)
             if(divisor>0):
                 if(dividend<0):
@@ -30,5 +29,5 @@ def power_shifter(x):
     elif(x<lower): 
         x= lower
     else:
-        x = x
+        pass
     return x
