@@ -1,14 +1,14 @@
 class Solution {
 public:
-    vector<vector<int>> threeSum(vector<int>& nums) {
-        vector<vector<int>> answers; 
+    vector<vector<int>> threeSum(vector<int>& nums) { 
         sort(nums.begin(),nums.end());
         if((nums[0]>0)||(nums.size()<3))
         {
-            return answers;
+            return {};
         }
         else
         {
+            vector<vector<int>> answers;
             for(int i=0;i<nums.size();i++)
             {
                 if(nums[i]>0)
@@ -43,20 +43,12 @@ public:
                             low_pointer+=1;
                             high_pointer-=1;; 
                         }
-                        else if(total_sum>0)
-                        {
-                            high_pointer-=1;;
-                        }
-                        else
-                        {
-                            low_pointer+=1;
-                        }
+                        high_pointer = (total_sum>0)?(high_pointer-1):high_pointer;
+                        low_pointer = (total_sum<0)?(low_pointer+1):low_pointer;
                     }
-
                 }
             }
-
+        return answers;        
         }
-        return answers;
     }
 };
